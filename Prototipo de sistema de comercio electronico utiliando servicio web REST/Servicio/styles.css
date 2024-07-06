@@ -1,0 +1,441 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d3d3f7; /* Fondo azul tenue */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Añadir padding para mejorar el espacio en dispositivos pequeños */
+}
+
+.container_menu {
+  text-align: center;
+  background-color: #f0f0f0; /* Fondo gris claro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 400px; /* Ancho máximo del contenedor */
+  width: 100%; /* Ancho completo del contenedor */
+  margin: 20px; /* Añadir margen para dispositivos pequeños */
+}
+
+/* Estilos para los botones */
+.button, .clear-button, .back-button {
+  background-color: #4682b4; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Espacio entre botones */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.button:hover, .clear-button:hover, .back-button:hover {
+  background-color: #36648b; /* Cambia el color de fondo al pasar el cursor */
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+}
+
+.input-field:focus {
+  outline: none; /* Elimina el contorno al hacer focus */
+  border-color: #4682b4; /* Cambia el color del borde al hacer focus */
+}
+
+/* Estilos para la imagen */
+#alta_imagen {
+  width: 100px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de archivo */
+.file-button {
+  margin-top: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.search-container input[type="text"],
+.search-container select {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Añadir margen inferior para espacio en dispositivos pequeños */
+}
+
+.search-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Añadir margen inferior para espacio en dispositivos pequeños */
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+.articulos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.articulo-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* Utilizar flex para layout responsivo */
+  flex-direction: column; /* Asegura que los elementos internos se alineen en columna */
+  align-items: center; /* Centra los elementos */
+  text-align: center; /* Centra el texto */
+}
+
+.articulo-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.articulo-card h3 {
+  margin-top: 10px;
+}
+
+.articulo-card p {
+  margin: 10px 0;
+}
+
+.articulo-card button {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.articulo-card button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .container_menu {
+      max-width: 100%;
+      margin: 20px; /* Añadir margen para dispositivos pequeños */
+  }
+
+  .search-container {
+      flex-direction: column; /* Colocar elementos en columna */
+      align-items: stretch; /* Estirar elementos para ocupar el ancho completo */
+  }
+
+  .search-container input[type="text"],
+  .search-container select {
+      margin-right: 0; /* Eliminar margen derecho */
+      margin-bottom: 10px; /* Añadir margen inferior */
+  }
+
+  .articulos-container {
+      grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .button, .clear-button, .back-button {
+      font-size: 16px;
+      padding: 8px 16px;
+  }
+
+  .articulo-card {
+      padding: 10px;
+  }
+
+  .articulo-card button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+/* Estilos adicionales y ajustes para el nuevo diseño */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #e9ecef;
+  border-bottom: 2px solid #dee2e6;
+}
+.menu button {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #0056b3;
+}
+.captura {
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 20px auto;
+  padding: 30px;
+  width: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.captura button {
+  width: auto;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: #17a2b8;
+  border: 1px solid #17a2b8;
+}
+.captura input[type="text"], 
+.captura input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.comprar {
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #ced4da;
+  width: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+#encabezado_busqueda {
+  background-color: #17a2b8;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+#encabezado_busqueda h2 {
+  margin: 0;
+}
+#comprar_articulos button:hover {
+  background-color: #0056b3;
+}
+.comprar-busqueda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.comprar-busqueda select {
+  width: 48%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  font-size: 16px;
+}
+.comprar-busqueda select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+.comprar-articulos {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;  
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+}
+#muestra_articulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#ver_carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+.comprar_details {
+  width: 65%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0;
+}
+.comprar_bought {
+  width: 30%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}
+.comprar-articulos img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.comprar button {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: #fff;
+}
+.comprar input[type="text"] {
+  width: 50%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+#muestra_articulos button {
+  padding: 12px 20px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  background-color: #17a2b8;
+  color: #fff;
+}
+#carrito_compras {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+#carrito_compras h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+.comprar_carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 30px;
+  color: #333;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: 60%;
+  border-radius: 10px;
+}
+.comprar_carrito button {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background-color: #007bff;
+  border: 1px solid #007bff;
+  color: #fff;
+}
+.comprar_carrito img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.carrito_details {
+  flex: 2;
+  padding: 0 20px;
+}
+.carrito_details h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+.carrito_details p {
+  margin: 0;
+  color: #666;
+}
+.carrito_bought {
+  text-align: right;
+  color: #333;
+}
+@media (max-width: 768px) {
+  .menu {
+      flex-direction: column;
+  }
+  .captura, .comprar {
+      width: 80%;
+      padding: 20px;
+  }
+  .comprar_details, .comprar_bought {
+      width: 100%;
+      margin: 0;
+  }
+  .comprar_details {
+      margin-bottom: 20px;
+  }
+  .comprar-articulos img {
+      width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .menu button {
+      padding: 10px;
+      font-size: 14px;
+  }
+  .captura, .comprar {
+      width: 100%;
+      padding: 15px;
+  }
+  .comprar-carrito {
+      width: 100%;
+      padding: 20px;
+  }
+  .comprar button {
+      font-size: 14px;
+      padding: 10px;
+  }
+}
